@@ -9,7 +9,17 @@ QUnit.module('Тестируем функцию tree', function () {
 		assert.strictEqual(tree('1'), null);
 		assert.strictEqual(tree('2'), null);
 	});
-
+	
+	QUnit.test('Елочек с нецелочисленной высотой не бывает', function (assert) {
+	  assert.strictEqual(tree(4.56), null);
+	  assert.strictEqual(tree("4.56"), null);
+	  assert.strictEqual(tree(null), null);
+	  assert.strictEqual(tree(undefined), null);
+	  assert.strictEqual(tree(NaN), null);
+	  assert.strictEqual(tree([1, 35, "age"]), null);
+	});
+	
+	
 	QUnit.test('Ёлочка высотой 3', function (assert) {
 		const expected =
 			' * \n' +
@@ -52,5 +62,22 @@ QUnit.module('Тестируем функцию tree', function () {
 			'      |      \n';
 		assert.strictEqual(tree(8), expected);
 		assert.strictEqual(tree('8'), expected);
+	});
+	
+	QUnit.test('Ёлочка высотой 11', function (assert) {
+		const expected =
+			'         *         \n' +
+			'        ***        \n' +
+			'       *****       \n' +
+			'      *******      \n' +
+			'     *********     \n' +
+			'    ***********    \n' +
+			'   *************   \n' +
+			'  ***************  \n' +
+			' ***************** \n' +
+			'*******************\n' +
+			'         |         \n';
+		assert.strictEqual(tree(11), expected);
+		assert.strictEqual(tree('11'), expected);
 	});
 });
