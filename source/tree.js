@@ -6,7 +6,7 @@
  * @param {string|number} - высота елочки
  * @returns {(string|null)} - елочка|null
  */
-function tree(height) {
+let tree = height => {
   if (!Number.isInteger(+height)) {
     return null;
   }
@@ -15,7 +15,7 @@ function tree(height) {
     return null;
   }
   
-  let res = "";
+  let res = '';
   for (let i = 0; i < height - 1; i++) {
     const stars = ('*').repeat(2 * i + 1);
     const spaces = (' ').repeat(height - 2 - i);

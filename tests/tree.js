@@ -13,9 +13,16 @@ QUnit.module('Тестируем функцию tree', function () {
 	QUnit.test('Елочек с нецелочисленной высотой не бывает', function (assert) {
 	  assert.strictEqual(tree(4.56), null);
 	  assert.strictEqual(tree("4.56"), null);
+	  assert.strictEqual(tree("adjgdapgkfe"), null);
+	  assert.strictEqual(tree("уплщпущаул"), null);
+	  assert.strictEqual(tree({name: "Aleksandr"}), null);
+	  assert.strictEqual(tree({}), null);
+	  assert.strictEqual(tree([]), null);
+	  assert.strictEqual(tree(''), null);
 	  assert.strictEqual(tree(null), null);
 	  assert.strictEqual(tree(undefined), null);
 	  assert.strictEqual(tree(NaN), null);
+	  assert.strictEqual(tree(Infinity), null);
 	  assert.strictEqual(tree([1, 35, "age"]), null);
 	});
 	
