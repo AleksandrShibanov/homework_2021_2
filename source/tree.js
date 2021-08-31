@@ -6,7 +6,7 @@
  * @param {string|number} - высота елочки
  * @returns {(string|null)} - елочка|null
  */
-let tree = height => {
+const tree = height => {
   if (!Number.isInteger(+height)) {
     return null;
   }
