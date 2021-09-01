@@ -88,3 +88,4 @@ QUnit.module('Тестируем функцию tree', function () {
 		assert.strictEqual(tree('11'), expected);
 	});
 });
+
